@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @student.birth_date %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+
+
+<h3>Awards</h3>
+<table>
+<tr> 
+    <th>Name</th>  
+    <th>Year</th>  
+    <th>Student</th> 
+</tr>
+
+<% @student.awards.each do |award| %>
+<tr>
+    <td><%= award.name %></td>
+    <td><%= award.student.name %></td>
+</tr>
+<% end %>
+</table>    
